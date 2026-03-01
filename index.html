@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH -->
+<div id="authSection" class="auth-container">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="btnLogin">Login</button>
+    <button id="btnRegister">Register</button>
+</div>
+
+<!-- APP -->
+<div id="appSection" class="app-container" style="display:none;">
+
+    <div class="top-bar">
+        <span id="userEmail"></span>
+        <button onclick="logoutUser()">Logout</button>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input id="cityInput" type="text" placeholder="Enter city...">
+        <button id="btnSearch" class="search-icon-btn">
+            🔍
+        </button>
+    </div>
+
+    <!-- WEATHER -->
+    <div class="weather-card">
+        <h2 id="weatherCity"></h2>
+        <h3 id="weatherDesc"></h3>
+        <p id="weatherTemp"></p>
+        <p id="weatherHumidity"></p>
+        <p id="weatherWind"></p>
+    </div>
+
+    <!-- NOTES -->
+    <div class="notes-card">
+        <h3>Notes</h3>
+        <textarea id="noteInput" placeholder="Add note..."></textarea>
+        <button id="btnSaveNote">Save Note</button>
+        <div id="notesList"></div>
+    </div>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
