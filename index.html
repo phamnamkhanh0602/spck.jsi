@@ -1,121 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Dashboard</title>
-<link rel="stylesheet" href="style.css">
+<title>Weather App</title>
 </head>
 
 <body>
 
-<!-- LOGIN / REGISTER -->
-<div id="authSection" class="auth-container">
+<h2>Loading...</h2>
 
-<h2>Login</h2>
+<script type="module">
 
-<input 
-type="email" 
-id="email" 
-placeholder="Email"
-required
->
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-<input 
-type="password" 
-id="password" 
-placeholder="Password"
-required
->
+const firebaseConfig = {
+  apiKey: "AIzaSyBNfllayo9sZxFz3EO4qvocJ8lpf9zmRgQ",
+  authDomain: "spck-jsi-7b8b6.firebaseapp.com",
+  projectId: "spck-jsi-7b8b6",
+  storageBucket: "spck-jsi-7b8b6.firebasestorage.app",
+  messagingSenderId: "334249999759",
+  appId: "1:334249999759:web:3aa0819f2d279c5eb41ffa",
+  measurementId: "G-HFQSDJYFGD"
+};
 
-<div class="auth-buttons">
-<button id="btnLogin">Login</button>
-<button id="btnRegister">Register</button>
-</div>
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-</div>
+onAuthStateChanged(auth, (user) => {
 
+if(user){
+window.location = "dashboard.html";
+}else{
+window.location = "login.html";
+}
 
-<!-- MAIN APP -->
-<div id="appSection" class="app-container" style="display:none;">
+});
 
-<!-- TOP BAR -->
-<div class="top-bar">
-
-<span id="userEmail"></span>
-
-<button id="btnLogout">
-Logout
-</button>
-
-</div>
-
-
-<!-- SEARCH -->
-<div class="search-box">
-
-<input 
-id="cityInput" 
-type="text" 
-placeholder="Enter city..."
->
-
-<button 
-id="btnSearch" 
-class="search-icon-btn"
->
-🔍
-</button>
-
-</div>
-
-
-<!-- WEATHER CARD -->
-<div class="weather-card">
-
-<h2 id="weatherCity">City</h2>
-
-<img id="weatherIcon" width="80">
-
-<h3 id="weatherDesc"></h3>
-
-<p id="weatherTemp"></p>
-
-<p id="weatherFeels"></p>
-
-<p id="weatherHumidity"></p>
-
-<p id="weatherWind"></p>
-
-<p id="weatherSun"></p>
-
-</div>
-
-<!-- NOTES -->
-<div class="notes-card">
-
-<h3>Notes</h3>
-
-<textarea 
-id="noteInput" 
-placeholder="Add note..."
-></textarea>
-
-<button id="btnSaveNote">
-Save Note
-</button>
-
-<div id="notesList"></div>
-
-</div>
-
-</div>
-
-
-<!-- JS -->
-<script type="module" src="firebase.js"></script>
-<script type="module" src="script.js"></script>
+</script>
 
 </body>
 </html>
