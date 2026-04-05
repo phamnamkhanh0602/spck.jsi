@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Weather App</title>
 </head>
-
 <body>
 
 <h2>Loading...</h2>
@@ -27,14 +26,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-onAuthStateChanged(auth, (user) => {
-
+onAuthStateChanged(auth,(user)=>{
 if(user){
-window.location = "dashboard.html";
+window.location="dashboard.html";
 }else{
-window.location = "login.html";
+window.location="login.html";
 }
-
 });
 
 </script>

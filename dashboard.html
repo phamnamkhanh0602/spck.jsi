@@ -11,46 +11,32 @@
 <div class="dashboard">
 
 <div class="sidebar">
-
 <h2>🌤</h2>
-
 <ul>
 <li class="active">Weather</li>
 </ul>
-
 <button id="logoutBtn">Logout</button>
-
 </div>
-
 
 <div class="main">
 
 <div class="search-bar">
-
 <input id="cityInput" placeholder="Search city">
-
 <button id="btnSearch">Search</button>
-
 </div>
 
+<!-- WEATHER CARD -->
 <div class="weather-card">
-
 <div class="weather-info">
-
 <h1 id="city">City</h1>
-
 <h2 id="temp">--°C</h2>
-
 <p id="desc">Weather</p>
-
 </div>
-
 <img id="icon" class="weather-icon">
-
 </div>
 
+<!-- DETAILS -->
 <div class="weather-details">
-
 <div class="detail-card">
 <p>Humidity</p>
 <h3 id="humidity"></h3>
@@ -59,6 +45,15 @@
 <div class="detail-card">
 <p>Wind</p>
 <h3 id="wind"></h3>
+</div>
+</div>
+
+<!-- FORECAST -->
+<div class="forecast-box">
+<h3>5-Day Forecast</h3>
+<div id="forecast" class="forecast-row"></div>
+</div>
+
 </div>
 
 </div>
